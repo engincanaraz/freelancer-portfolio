@@ -1,168 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Etiketleri -->
+    <meta name="description" content="Akeller Lokum - 40 yıllık tecrübe ile geleneksel Türk lokumu, çikolata ve şekerleme üretimi. Toptan satış ve ihracat hizmetleri. En kaliteli hammaddeler ve hijyenik üretim." />
+    <meta name="keywords" content="lokum, türk lokumu, toptan lokum, lokum ihracat, lokum ithalat, çikolata, şekerleme, antep fıstıklı lokum, gül lokumu, damla sakızlı lokum, wholesale turkish delight" />
+    <meta name="author" content="Akeller Lokum" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Akeller Lokum - Geleneksel Türk Lokumu ve Şekerleme" />
+    <meta property="og:description" content="40 yıllık tecrübe ile geleneksel Türk lokumu, çikolata ve şekerleme üretimi. Toptan satış ve ihracat hizmetleri." />
+    <meta property="og:image" content="https://akellerlokum.com/img/logo.png" />
+    <meta property="og:url" content="https://akellerlokum.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Akeller Lokum - Geleneksel Türk Lokumu" />
+    <meta name="twitter:description" content="40 yıllık tecrübe ile geleneksel Türk lokumu üretimi. Toptan satış ve ihracat hizmetleri." />
+    <meta name="twitter:image" content="https://akellerlokum.com/img/logo.png" />
+    
+    <!-- PWA Meta Etiketleri -->
+    <meta name="theme-color" content="#e74c3c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Akeller Lokum">
+    <link rel="apple-touch-icon" href="img/icons/icon-152x152.png">
+    <link rel="manifest" href="manifest.json">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap"
       rel="stylesheet" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="preload" href="fonts/custom-font.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="css/main.css" as="style">
+    <script src="js/main.js" defer></script>
+    <script src="js/analytics.js" async></script>
     
-    <title>Freelancer</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <title>Akeller Lokum - Geleneksel Türk Lokumu</title>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Akeller Lokum",
+      "url": "https://akellerlokum.com",
+      "logo": "https://akellerlokum.com/img/logo.png",
+      "description": "40 yıllık tecrübe ile geleneksel Türk lokumu, çikolata ve şekerleme üretimi yapan köklü bir marka.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Beylikdüzü OSB Mah. Birlikte Sanayi Sitesi 1. Cad. No:24/5",
+        "addressLocality": "Beylikdüzü",
+        "addressRegion": "İstanbul",
+        "postalCode": "34500",
+        "addressCountry": "TR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90-212-876-3901",
+        "contactType": "customer service",
+        "email": "info@akellersekerleme.com.tr"
+      },
+      "sameAs": [
+        "https://www.facebook.com/akellerlokum",
+        "https://www.instagram.com/akellerlokum",
+        "https://www.youtube.com/akellerlokum"
+      ]
+    }
+    </script>
   </head>
   <body>
-    <!-- header -->
+    <!-- Hero Section -->
     <header id="header__home">
       <div class="container">
         <nav class="main-nav">
-          <img src="img/logo.png" alt="" class="main-nav__logo" />
+          <img src="img/logo.png" alt="Akeller Lokum Logo" class="main-nav__logo" />
+          <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <ul class="main-nav__items">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+            <li><a href="about.html">Hakkımızda</a></li>
+            <li><a href="products.html">Ürünlerimiz</a></li>
+            <li><a href="contact.html">İletişim</a></li>
           </ul>
         </nav>
-        <div class="header-content">
-          <h1>I'm John Doe
-            <span
-              class="typewrite"
-              data-period="1000"
-              data-type='["Developer","Designer","Freelancer"]''></span>
-          </h1>
-          <a href="https://www.linkedin.com/in/engincanaraz/" class="btn-light animate__animated animate__tada my-2">
-           View My Profile
-          </a>
+        <div class="hero-content">
+          <h1 class="animate__animated animate__fadeIn">Tarihin Derinliklerinden Gelen Eşsiz Türk Lokumu</h1>
+          <p class="lead animate__animated animate__fadeIn animate__delay-1s">40 Yıllık Tecrübe ile Geleneksel Lezzetler</p>
+          <div class="hero-text animate__animated animate__fadeIn animate__delay-2s">
+            <p>Türk lokumu, Osmanlı'dan günümüze uzanan geleneksel bir lezzet mirasıdır. Kaliteli hammaddeler ve hijyenik üretim anlayışımızla ürettiğimiz çikolata, lokum ve şekerleme çeşitleri ile damak tadınıza hitap ediyoruz.</p>
+          </div>
+          <div class="hero-buttons animate__animated animate__fadeIn animate__delay-3s">
+            <a href="products.html" class="btn-primary">Ürünlerimizi Keşfedin</a>
+            <a href="about.html" class="btn-light">Hakkımızda</a>
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- section a -->
-     <section id="home__a" class="text-center py-2">
+    <!-- Kategoriler -->
+    <section id="categories" class="py-3">
       <div class="container">
-       <h2 class="section-title">Introduction</h2>
-       <div class="border-bottom"></div>
-       <p class="lead">I am Junior Web developer able to build a Web presence from the ground up - from concept, navigation, layout and programming to UX and SEO. Skilled at writing well-designed, testable and efficient code using current best practices in Web development. Fast learner, hard worker and team player who is proficient in an array of scripting languages and multimedia Wet tools.</p>
-       <div class="skills my-3">
-        <div>
-         <i class="fa-brands fa-js fa-3x"></i>
-         <h3>Javascript</h3>
-         <p> Expertise in dynamic, interactive applications.</p>
+        <h2 class="section-title">Ürün Kategorilerimiz</h2>
+
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-candy-cane"></i>
+            </div>
+            <div class="category-content">
+              <h3>Lokum Çeşitlerimiz</h3>
+              <p>Geleneksel tariflerle hazırlanan, birbirinden lezzetli lokum çeşitlerimizi keşfedin. Hindistan cevizli, Antep fıstıklı ve daha fazlası...</p>
+              <a href="products.html#lokumlar" class="btn-text">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-cookie"></i>
+            </div>
+            <div class="category-content">
+              <h3>Çikolata Çeşitlerimiz</h3>
+              <p>En kaliteli kakao çekirdeklerinden üretilen, özel dolgulu çikolatalarımızı tadın. Sütlü, bitter ve özel serilerimiz sizleri bekliyor.</p>
+              <a href="products.html#cikolatalar" class="btn-text">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-gift"></i>
+            </div>
+            <div class="category-content">
+              <h3>Özel Paketler</h3>
+              <p>Özel günleriniz için hazırladığımız hediye paketleri ile sevdiklerinizi mutlu edin. Karışık lokum ve çikolata seçenekleri mevcut.</p>
+              <a href="products.html#paketler" class="btn-text">Detaylı Bilgi <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
         </div>
-        <div>
-         <i class="fa-brands fa-react fa-3x"></i>
-         <h3>React</h3>
-         <p>Building scalable and responsive UIs.</p>
-        </div>
-        <div>
-         <i class="fa-brands fa-node-js fa-3x"></i>
-         <h3>Node.js</h3>
-         <p>Developing efficient server-side applications.</p>
-        </div>
-        <div>
-         <i class="fa-solid fa-layer-group fa-3x"></i>
-         <h3>Databases</h3>
-         <p> Proficient in SQL and NoSQL systems.</p>
-        </div>
-       </div>
       </div>
-     </section>
-     <!-- section b -->
-      <section id="home__b" class="text-center py-2">
-       <div class="container">
-        <h2 class="section-title">Profile</h2>
-        <div class="border-bottom"></div>
-        <p class="lead">
-         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor dolorem, cumque nam earum voluptas dicta.
-        </p>
-       </div>
-       <div class="profile">
-        <div>
-         <ul>
-          <li><i class="fas fa-users fa-3x"></i></li>
-          <li class="title">Clients</li>
-          <li class="number"> Worked with 50+ clients successfully.</li>
-         </ul>
-        </div>
-        <div>
-         <ul>
-          <li><i class="fas fa-award fa-3x"></i></li>
-          <li class="title">Projects</li>
-          <li class="number">Completed 50+ diverse projects.</li>
-         </ul>
-        </div>
-        <div>
-         <ul>
-          <li><i class="fas fa-hourglass-start fa-3x"></i></li>
-          <li class="title">Experience</li>
-          <li class="number">7200+ hours of development.</li>
-         </ul>
-        </div>
-        <div>
-         <ul>
-          <li><i class="fas fa-code-branch fa-3x"></i></li>
-          <li class="title">On-Time Delivery</li>
-          <li class="number">36 projects delivered on schedule.</li>
-         </ul>
-        </div>
-       </div>
-      </section>
-      <!-- section  -->
-       <section id="home__c" class="text-center py-2">
-        <div class="container">
-         <h2 class="section-title">Working Process</h2>
-         <div class="border-bottom"></div>
-         <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum autem eum, aperiam sequi aut at?</p>
-         <div class="process">
-          <div>
-           <i class="fa-solid fa-layer-group fa-4x process__icon my-2">
-            <div class="process__step">1</div>
-           </i>
-           <h3>Step 1</h3>
-           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aut voluptates reiciendis culpa omnis cumque.</p>
+    </section>
+
+    <!-- Özellikler -->
+    <section id="features" class="bg-light py-3">
+      <div class="container">
+        <h2 class="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Aynı Gün Kargo</h3>
+            <p>Siparişleriniz özenle hazırlanır ve aynı gün içerisinde kargoya verilir.</p>
           </div>
-          <div>
-           <i class="fa-solid fa-eye fa-4x process__icon my-2">
-            <div class="process__step">2</div>
-           </i>
-           <h3>Step 2</h3>
-           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aut voluptates reiciendis culpa omnis cumque.</p>
-          </div><div>
-           <i class="fas fa-object-ungroup fa-4x process__icon my-2">
-            <div class="process__step">3</div>
-           </i>
-           <h3>Step 3</h3>
-           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aut voluptates reiciendis culpa omnis cumque.</p>
-          </div><div>
-           <i class="fas fa-file-alt fa-4x process__icon my-2">
-            <div class="process__step">4</div>
-           </i>
-           <h3>Step 4</h3>
-           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aut voluptates reiciendis culpa omnis cumque.</p>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-box"></i>
+            </div>
+            <h3>Özel Paketleme</h3>
+            <p>Ürünleriniz özel koruyucu paketlerle tazeliğini koruyacak şekilde gönderilir.</p>
           </div>
-         </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Kalite Garantisi</h3>
+            <p>40 yıllık tecrübemizle en kaliteli ürünleri sizlere sunuyoruz.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Güvenli Alışveriş</h3>
+            <p>SSL sertifikalı güvenli ödeme altyapısı ile güvenle alışveriş yapın.</p>
+          </div>
         </div>
-       </section>
-       <!-- footer -->
-        <footer id="main-footer">
-         <div class="footer-content container">
-          <p>Copyright &copy; 2025. All Rights Reserved.</p>
-          <div class="social">
-           <i class="fab fa-whatsapp"></i>
-           <i class="fab fa-medium"></i>
-           <i class="fab fa-github"></i>
-           <i class="fab fa-linkedin"></i>
+      </div>
+    </section>
+
+    <!-- Toptan Satış Bölümü -->
+    <section id="wholesale" class="bg-light py-3">
+      <div class="container">
+        <h2 class="section-title">Kurumsal Satış Çözümleri</h2>
+        <p class="lead text-center">40 yıllık tecrübemiz ve profesyonel ekibimizle işletmenize özel çözümler sunuyoruz</p>
+        
+        <div class="wholesale-grid">
+          <div class="wholesale-item">
+            <div class="wholesale-header">
+              <div class="wholesale-icon">
+                <i class="fas fa-store"></i>
+              </div>
+              <h3>Toptan Satış</h3>
+              <p>Premium kalitede lokum ve şekerleme ürünleri için profesyonel tedarik çözümleri</p>
+            </div>
+            <div class="wholesale-content">
+              <div class="wholesale-info">
+                <div class="info-badge">
+                  <i class="fas fa-certificate"></i>
+                  <span>ISO 22000:2018</span>
+                </div>
+                <div class="info-badge">
+                  <i class="fas fa-award"></i>
+                  <span>HACCP</span>
+                </div>
+              </div>
+              <ul class="wholesale-features">
+                <li><i class="fas fa-check-circle"></i>Özel Toptan Fiyatlandırma</li>
+                <li><i class="fas fa-check-circle"></i>Büyük Sipariş İndirimleri</li>
+                <li><i class="fas fa-check-circle"></i>Özel Ambalajlama</li>
+                <li><i class="fas fa-check-circle"></i>Hızlı Teslimat</li>
+              </ul>
+              <div class="wholesale-advantages">
+                <div class="advantage-item">
+                  <i class="fas fa-percentage"></i>
+                  <div class="advantage-content">
+                    <strong>Toptan İndirim</strong>
+                    <span>Büyük siparişlerde özel fiyatlar</span>
+                  </div>
+                </div>
+                <div class="advantage-item">
+                  <i class="fas fa-box"></i>
+                  <div class="advantage-content">
+                    <strong>Kurumsal Satış</strong>
+                    <span>İhtiyacınıza uygun çözümler sunuyoruz</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-         </div>
-        </footer>
+
+          <div class="wholesale-item">
+            <div class="wholesale-header">
+              <div class="wholesale-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h3>İhracat Hizmetleri</h3>
+              <p>Uluslararası standartlarda üretim ve profesyonel ihracat çözümleri</p>
+            </div>
+            <div class="wholesale-content">
+              <div class="wholesale-info">
+                <div class="info-badge">
+                  <i class="fas fa-ship"></i>
+                  <span>20+ Ülke</span>
+                </div>
+                <div class="info-badge">
+                  <i class="fas fa-file-contract"></i>
+                  <span>Özel Üretim</span>
+                </div>
+              </div>
+              <ul class="wholesale-features">
+                <li><i class="fas fa-check-circle"></i>Uluslararası Kalite Sertifikaları</li>
+                <li><i class="fas fa-check-circle"></i>Gümrük Süreç Yönetimi</li>
+                <li><i class="fas fa-check-circle"></i>Özel Markalı Üretim</li>
+                <li><i class="fas fa-check-circle"></i>Çok Dilli İletişim</li>
+              </ul>
+              <div class="wholesale-advantages">
+                <div class="advantage-item">
+                  <i class="fas fa-handshake"></i>
+                  <div class="advantage-content">
+                    <strong>İş Ortaklığı</strong>
+                    <span>Uzun vadeli iş birlikleri</span>
+                  </div>
+                </div>
+                <div class="advantage-item">
+                  <i class="fas fa-shield-alt"></i>
+                  <div class="advantage-content">
+                    <strong>Kalite Garantisi</strong>
+                    <span>Uluslararası standartlar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+
+       
+      </div>
+    </section>
+
+    <section id="contact-cta" class="py-3">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Bizimle İletişime Geçin</h2>
+          <p>Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.</p>
+          <a href="contact.html" class="btn-primary">İletişim</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="main-footer">
+      <div class="footer-content container">
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Ürünler</h4>
+            <ul>
+              <li><a href="products.html#lokumlar">Lokum Çeşitleri</a></li>
+              <li><a href="products.html#cikolatalar">Çikolata Çeşitleri</a></li>
+              <li><a href="products.html#paketler">Özel Paketler</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Kurumsal</h4>
+            <ul>
+              <li><a href="about.html">Hakkımızda</a></li>
+              <li><a href="contact.html">İletişim</a></li>
+              <li><a href="privacy.html">Gizlilik Politikası</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>İletişim</h4>
+            <ul>
+              <li><a href="tel:+902128763901">+90 212 876 39 01</a></li>
+              <li><a href="mailto:info@akellerlokum.com">info@akellerlokum.com</a></li>
+              <li>Beylikdüzü / İstanbul</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-social">
+          <a href="https://wa.me/902128763901" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/akellerlokum" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/akellerlokum" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="tel:+902128763901" target="_blank"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>&copy; 2006-2024 Akeller Lokum. Tüm Hakları Saklıdır.</p>
+      </div>
+    </footer>
     <script src="js/jquery.min.js"></script>
-    <script src="js/type-writer.js"></script>
+    
+    <!-- Service Worker Kaydı -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker başarıyla kaydedildi:', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker kaydı başarısız:', error);
+            });
+        });
+      }
+    </script>
+
+    <script>
+      // Hamburger menü işlevselliği
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.main-nav__items');
+      const navLinks = document.querySelectorAll('.main-nav__items li');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        
+        // Menü linklerini animasyonlu göster/gizle
+        navLinks.forEach((link, index) => {
+          if (link.style.animation) {
+            link.style.animation = '';
+          } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+          }
+          link.classList.toggle('show');
+        });
+      });
+
+      // Sayfa dışına tıklandığında menüyü kapat
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+          navLinks.forEach(link => {
+            link.style.animation = '';
+            link.classList.remove('show');
+          });
+        }
+      });
+    </script>
   </body>
 </html>

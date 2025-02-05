@@ -1,0 +1,306 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+
+  .product-item {
+    background: $light-color;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      height: 250px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .product-info {
+      padding: 1.5rem;
+      text-align: center;
+
+      h3 {
+        margin-bottom: 1rem;
+        color: $primary-color;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .btn-light {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $primary-color;
+          color: $light-color;
+        }
+      }
+    }
+  }
+}
+
+// Slider styles
+.swiper {
+  width: 100%;
+  padding: $spacing-lg 0;
+
+  &-slide {
+    background: $bg-color;
+    width: 300px;
+    border-radius: $border-radius;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    transition: all $transition;
+    opacity: 0;
+    animation: fadeIn $transition-slow forwards;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $box-shadow;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 382px;
+      object-fit: cover;
+      transition: all $transition;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  &-button {
+    &-next,
+    &-prev {
+      color: #333;
+      opacity: 0.7;
+      transition: all $transition;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &-pagination-bullet-active {
+    background: #333 !important;
+  }
+}
+
+.product-info {
+  padding: $spacing-md;
+  background: $bg-color;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all $transition;
+
+  h3 {
+    margin-bottom: $spacing-sm;
+    font-size: 1.2rem;
+    color: #333;
+    transition: all $transition;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: $spacing-md;
+    color: #666;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+
+  .btn-light {
+    align-self: center;
+    padding: $spacing-sm $spacing-lg;
+    transition: $transition;
+    background: $bg-color;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    border-radius: 30px;
+    
+    &:hover {
+      background: $primary-color;
+      color: $bg-color;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Responsive tasarım için medya sorguları
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
+#products {
+  &__intro {
+    background: linear-gradient(rgba($bg-color, 0.97), rgba($bg-color, 0.97)), $bg-image;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    .history-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: $spacing-xl;
+
+      .history-text {
+        .lead {
+          font-size: 1.3rem;
+          line-height: 1.8;
+          color: $accent-color;
+          margin-bottom: $spacing-lg;
+          font-weight: 500;
+        }
+
+        .history-detail {
+          font-size: 1.1rem;
+          line-height: 1.8;
+          color: $text-color;
+          margin-bottom: $spacing-lg;
+          text-align: left;
+
+          em {
+            color: $primary-color;
+            font-style: italic;
+            font-weight: 500;
+          }
+        }
+
+        .company-info {
+          background: $light-color;
+          padding: $spacing-lg;
+          border-radius: $border-radius;
+          margin-top: $spacing-xl;
+          display: flex;
+          align-items: center;
+          gap: $spacing-lg;
+          box-shadow: $box-shadow;
+
+          i {
+            font-size: 2rem;
+            color: $primary-color;
+          }
+
+          p {
+            font-size: 1.2rem;
+            color: $text-color;
+            margin: 0;
+            line-height: 1.6;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  // ... rest of the existing code ...
+}
+
+// Responsive tasarım
+@media (max-width: $tablet) {
+  #products {
+    &__intro {
+      .history-content {
+        padding: $spacing-md;
+
+        .history-text {
+          .lead {
+            font-size: 1.2rem;
+          }
+
+          .history-detail {
+            font-size: 1rem;
+          }
+
+          .company-info {
+            padding: $spacing-md;
+            flex-direction: column;
+            text-align: center;
+            gap: $spacing-md;
+
+            p {
+              font-size: 1.1rem;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Ürün grid görünümü
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-lg;
+  margin-top: $spacing-xl;
+
+  .product-card {
+    opacity: 0;
+    animation: fadeIn $transition-slow forwards;
+    animation-delay: calc(var(--delay, 0) * 100ms);
+
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        --delay: #{$i};
+      }
+    }
+  }
+}
+
+// Responsive tasarım
+@media #{$media-tablet} {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media #{$media-mobile} {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+} 

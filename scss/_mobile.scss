@@ -1,135 +1,151 @@
 @use "variables";
 
-// tables and smaller
-@media(max-width: 768px) {
-    #header {
-        &__home {
-            height: 30rem;
+// Tablets & Smaller
+@media (max-width: 800px) {
+  #header {
+    &__home {
+      height: 30rem;
 
-            .header-content {
-                padding-top: 7rem;
+      .header-content {
+        padding-top: 5rem;
 
-                h1 {
-                    font-size: 2.6rem;
-                }
-            }
+        h1 {
+          font-size: 3rem;
         }
-    } 
-
-    #home__a .skills,
-    #home__b .profile,
-    #home__c .process,
-    .items {
-        grid-template-columns: repeat(2, 1fr);
+      }
     }
+  }
+
+  #home {
+    &__a {
+      .categories {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__b {
+      .profile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  #about {
+    &__a {
+      .about-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__c {
+      .about-logos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  #contact {
+    &__b {
+      .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-// mobile
-@media(max-width: 576px) {
+// Smartphones
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
 
-    #home {
-        &__a {
-            .skills div {
-                border-bottom: 1px variables.$light-color solid;
-                padding-bottom: 1rem;
+    li {
+      padding: 1rem;
+    }
+  }
 
-                &:last-child {
-                    border: none;
-                    padding-bottom: 0;
-                }
-            }
+  #header {
+    &__home {
+      height: 25rem;
+      border-bottom: 3px solid $primary-color;
+      background-position: center;
+
+      .header-content {
+        padding-top: 3rem;
+
+        h1 {
+          font-size: 2rem;
         }
+
+        .lead {
+          font-size: 1.3rem;
+        }
+
+        .description {
+          font-size: 1rem;
+          padding: 0 1rem;
+        }
+      }
     }
 
-    .lead {
-        font-size: 1rem;
-        margin-bottom: 1.2rem;
-        word-spacing: 1px;
+    &__inner {
+      height: 10rem;
     }
+  }
 
-    #header {
-        &__home {
-            height: 10rem;
-            border-radius: 2px solid variables.$primary-color;
-            background-position: 20% 30%;
-
-            .header-content {
-               display: none;
-            }
-        }
-        &__inner {
-            height: 10rem;
-        }
-    } 
-
-    .main-nav {
-        flex-direction: column;
-        align-items: center;
-
-        li {
-            padding: 1rem;
-        }
-    }
-
-    #home__a .skills,
-    #home__b .profile,
-    #home__c .process,
-    .items,
-    #contact-b .contact-info {
+  #home {
+    &__a {
+      .categories {
         grid-template-columns: 1fr;
+      }
     }
 
-    #main-footer {
-        height: 7rem;
+    &__b {
+      .profile {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 
-        .footer-content {
-            flex-direction: column;
-            padding: 1rem;
-            height: 5rem;
+  #about {
+    &__c {
+      .about-logos {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 
-            .social {
-                padding-top: 1rem;
-            }
-        }
+  #contact {
+    &__a {
+      .form-fields {
+        grid-template-columns: 1fr;
+      }
     }
 
-    #about {
-        &-a {
-            .info {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        &-c {
-            display: none;
-        }
+    &__b {
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
     }
+  }
 
-    #contact {
-        &-a {
-            .form-fields {
-                grid-template-areas: 
-                'name'
-                'email'
-                'subject'
-                'phone'
-                'message'
-                'button';
-            }
-        }
+  .products {
+    grid-template-columns: 1fr;
+  }
 
-        &-b {
-            div {
-                margin-bottom: 1rem;
-                padding-bottom: 1rem;
-                border-bottom: 1px dashed #fff;
+  .btn-dark,
+  .btn-light {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 
-                &:last-child {
-                    border: none;
-                    padding-bottom: 0;
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }    
+  .lead {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
 }

@@ -1,10 +1,1032 @@
-@use 'variables';
-@use 'utilities';
-@use 'base';
-@use 'header';
-@use 'home';
-@use 'about';
-@use 'footer';
-@use 'projects';
-@use 'contact';
-@use 'mobile';
+@import "variables";
+@import "base";
+@import "utilities";
+@import "header";
+@import "home";
+@import "about";
+@import "products";
+@import "contact";
+@import "footer";
+@import "mobile";
+
+.product {
+  &-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 520px;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 15px;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      min-height: 35px;
+      display: block;
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+  }
+
+  &-description {
+    color: #666;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: auto;
+    min-height: 42px;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  &-price {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222;
+    margin: 10px 0;
+    text-align: center;
+    padding: 5px 15px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: #fff !important;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  width: calc(100% - 40px);
+  position: relative;
+  z-index: 1;
+  margin: 0 20px 20px;
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.15);
+
+  i {
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+
+  &:hover {
+    background-color: #22c15e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(37, 211, 102, 0.15);
+  }
+}
+
+.swiper {
+  &-slide {
+    background: #fff;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeIn 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// Responsive Tasarım
+@media(max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 15px;
+  }
+}
+
+@media(max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .product {
+    &-card {
+      min-height: 480px;
+    }
+
+    &-image {
+      height: 250px;
+    }
+
+    &-content {
+      padding: 15px;
+      gap: 10px;
+
+      h3 {
+        font-size: 1.1rem;
+        min-height: 32px;
+      }
+    }
+
+    &-description {
+      font-size: 0.9rem;
+      min-height: 38px;
+    }
+
+    &-price {
+      font-size: 1.3em;
+      margin: 8px 0;
+    }
+  }
+
+  .btn-whatsapp {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    margin: 0 15px 15px;
+    width: calc(100% - 30px);
+
+    i {
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media(max-width: 500px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .product {
+    &-card {
+      min-height: 450px;
+    }
+
+    &-image {
+      height: 220px;
+    }
+
+    &-content {
+      padding: 12px;
+      gap: 8px;
+
+      h3 {
+        font-size: 1rem;
+        min-height: 30px;
+      }
+    }
+
+    &-description {
+      font-size: 0.85rem;
+      min-height: 36px;
+    }
+
+    &-price {
+      font-size: 1.2em;
+      margin: 5px 0;
+    }
+  }
+
+  .btn-whatsapp {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    margin: 0 12px 12px;
+    width: calc(100% - 24px);
+
+    i {
+      font-size: 1em;
+    }
+  }
+}
+
+// Toptan Satış Stilleri
+.wholesale {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pattern.png') repeat;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  .section-title {
+    position: relative;
+    margin-bottom: 0.5rem;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: $primary-color;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+  }
+
+  .lead {
+    color: $medium-color;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  &-item {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    }
+  }
+
+  &-header {
+    background: linear-gradient(135deg, rgba($primary-color, 0.03) 0%, rgba($primary-color, 0.08) 100%);
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    .wholesale-icon {
+      font-size: 2.8rem;
+      color: $primary-color;
+      margin-bottom: 1.2rem;
+
+      i {
+        background: #fff;
+        padding: 1.2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba($primary-color, 0.15);
+      }
+    }
+
+    h3 {
+      color: $dark-color;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    p {
+      color: $dark-color;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  &-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 0.8rem;
+
+    .info-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 1rem;
+      background: rgba($primary-color, 0.05);
+      border-radius: 25px;
+
+      i {
+        font-size: 1.1rem;
+        color: $primary-color;
+      }
+
+      span {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $dark-color;
+      }
+    }
+  }
+
+  &-features {
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: $dark-color;
+      font-size: 0.95rem;
+      line-height: 1.4;
+
+      i {
+        color: $primary-color;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &-advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: auto;
+
+    .advantage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 1rem;
+      background: rgba($primary-color, 0.02);
+      border-radius: 10px;
+
+      i {
+        font-size: 1.5rem;
+        color: $primary-color;
+      }
+
+      .advantage-content {
+        strong {
+          display: block;
+          color: $dark-color;
+          font-size: 1rem;
+          margin-bottom: 0.2rem;
+        }
+
+        span {
+          color: $dark-color;
+          font-size: 0.85rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  &-cta {
+    padding: 2rem;
+    background: rgba($primary-color, 0.03);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 1rem;
+
+    .btn-primary, .btn-outline {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &-contact {
+    margin-top: 4rem;
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-item {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+      }
+
+      > i {
+        font-size: 2.5rem;
+        color: $primary-color;
+        background: rgba($primary-color, 0.1);
+        padding: 1rem;
+        border-radius: 12px;
+      }
+    }
+
+    .contact-content {
+      flex: 1;
+
+      h4 {
+        color: $dark-color;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $medium-color;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $primary-color;
+        font-size: 1.1rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        i {
+          font-size: 1rem;
+        }
+
+        &:hover {
+          color: darken($primary-color, 10%);
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+// Ürünler Sayfası Toptan Satış Stilleri
+.wholesale-products {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/pattern.png') repeat;
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  .section-title {
+    position: relative;
+    margin-bottom: 0.5rem;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: $primary-color;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+  }
+
+  .lead {
+    color: $medium-color;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  &-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+  }
+}
+
+.wholesale-product {
+  &-header {
+    background: linear-gradient(135deg, rgba($primary-color, 0.05) 0%, rgba($primary-color, 0.1) 100%);
+    padding: 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    .wholesale-product-icon {
+      font-size: 3.5rem;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+
+      i {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba($primary-color, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      &:hover i {
+        background: $primary-color;
+        color: #fff;
+        transform: rotateY(180deg);
+      }
+    }
+
+    h3 {
+      color: $dark-color;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $medium-color;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+
+  &-content {
+    padding: 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba($primary-color, 0.05);
+      border-radius: 12px;
+
+      i {
+        font-size: 1.5rem;
+        color: $primary-color;
+      }
+
+      span {
+        font-size: 0.95rem;
+        color: $dark-color;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  &-features {
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: $dark-color;
+      font-size: 1rem;
+      line-height: 1.4;
+
+      i {
+        color: $primary-color;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &-advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    .advantage-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+
+      i {
+        font-size: 1.8rem;
+        color: $primary-color;
+      }
+
+      .advantage-content {
+        strong {
+          display: block;
+          color: $dark-color;
+          font-size: 1.1rem;
+          margin-bottom: 0.3rem;
+        }
+
+        span {
+          color: $medium-color;
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+
+  &-cta {
+    padding: 2rem;
+    background: rgba($primary-color, 0.03);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 1rem;
+
+    .btn-primary, .btn-outline {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.wholesale-contact-info {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  .contact-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    h4 {
+      color: $dark-color;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $medium-color;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: $primary-color;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+// Responsive Düzenlemeler
+@media (max-width: 992px) {
+  .wholesale {
+    &-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      padding: 0.8rem;
+    }
+
+    &-item {
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      }
+    }
+
+    &-header {
+      padding: 1.8rem;
+
+      .wholesale-icon {
+        font-size: 2.5rem;
+        
+        i {
+          padding: 1rem;
+          box-shadow: 0 8px 25px rgba($primary-color, 0.12);
+        }
+      }
+
+      h3 {
+        font-size: 1.6rem;
+      }
+    }
+
+    &-content {
+      padding: 1.8rem;
+    }
+
+    &-features {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    &-advantages {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      .advantage-item {
+        padding: 0.8rem;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+      }
+    }
+
+    &-contact {
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wholesale {
+    &-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      padding: 0.5rem;
+    }
+
+    &-item {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      }
+    }
+
+    &-header {
+      padding: 1.5rem;
+
+      .wholesale-icon {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        
+        i {
+          padding: 0.8rem;
+          border-radius: 12px;
+          box-shadow: 0 6px 20px rgba($primary-color, 0.1);
+        }
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    &-content {
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+
+    &-info {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+
+      .info-badge {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    &-features {
+      gap: 0.6rem;
+
+      li {
+        font-size: 0.9rem;
+      }
+    }
+
+    &-advantages {
+      gap: 0.8rem;
+
+      .advantage-item {
+        padding: 0.8rem;
+        gap: 0.6rem;
+
+        i {
+          font-size: 1.3rem;
+        }
+
+        .advantage-content {
+          strong {
+            font-size: 0.95rem;
+          }
+
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .wholesale {
+    &-grid {
+      gap: 1.2rem;
+    }
+
+    &-header {
+      padding: 1.2rem;
+
+      .wholesale-icon {
+        font-size: 2.2rem;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+      }
+    }
+
+    &-content {
+      padding: 1.2rem;
+      gap: 1rem;
+    }
+
+    &-advantages {
+      grid-template-columns: 1fr;
+    }
+  }
+}

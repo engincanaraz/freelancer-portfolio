@@ -1,6 +1,134 @@
-$max-width: 1200px;
-$primary-color: #EF6D6D;
-$light-color: #f4f4f4;
-$medium-color: #ccc; 
-$dark-color: #333; 
-$bg-image: url('../img/bg.jpeg');
+// Marka Renkleri
+$primary-color: #333333;    // Logo pembe
+$secondary-color: #666666;  // Logo yeşil
+$accent-color: #444444;     // Açık pembe aksent
+
+// Nötr Renkler
+$light-color: #f5f5f5;     // Çok açık pembe (section arkaplanları için)
+$medium-color: #e0e0e0;    // Açık yeşil (ayırıcılar için)
+$dark-color: #222222;      // Koyu yeşil (başlıklar için)
+
+// UI Renkleri
+$bg-color: #ffffff;         // Ana arka plan rengi
+$text-color: #555555;      // Ana metin rengi
+$muted-text: #777777;      // İkincil metin rengi
+$border-color: #E8F4EA;     // Kenarlık rengi
+$hover-color: #555555;  // Hover durumları için
+$success-color: #4CAF50;    // Başarı durumları için
+$error-color: #F44336;      // Hata durumları için
+
+// Tipografi
+$font-primary: 'Prompt', sans-serif;
+$font-size-base: 1rem;          // 16px
+$font-size-xs: 0.75rem;         // 12px
+$font-size-sm: 0.875rem;        // 14px
+$font-size-lg: 1.25rem;         // 20px
+$font-size-xl: 1.75rem;         // 28px
+$font-size-xxl: 2.5rem;         // 40px
+$font-size-display: 3.5rem;     // 56px
+
+// Font Weights
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+
+// Line Heights
+$line-height-tight: 1.2;
+$line-height-base: 1.6;
+$line-height-relaxed: 1.8;
+
+// Spacing System
+$spacing-unit: 0.25rem;  // 4px
+$spacing-xs: $spacing-unit;      // 4px
+$spacing-sm: $spacing-unit * 2;  // 8px
+$spacing-md: $spacing-unit * 4;  // 16px
+$spacing-lg: $spacing-unit * 6;  // 24px
+$spacing-xl: $spacing-unit * 8;  // 32px
+$spacing-xxl: $spacing-unit * 12; // 48px
+$spacing-section: $spacing-unit * 20; // 80px
+
+// Layout
+$max-width: 1440px;  // Ana container maksimum genişliği
+$container-max-width: 1200px;
+$container-padding: $spacing-md;
+$grid-gap: $spacing-lg;
+
+// UI Elements
+$border-radius-sm: 4px;
+$border-radius: 8px;
+$border-radius-lg: 12px;
+$border-radius-full: 9999px;
+
+$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 3px 8px rgba(0, 0, 0, 0.08);
+$box-shadow-inner: inset 0 2px 4px rgba($primary-color, 0.08);
+
+// Transitions
+$transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary-color, $accent-color);
+$gradient-dark: linear-gradient(135deg, $dark-color, $secondary-color);
+$gradient-light: linear-gradient(135deg, $light-color, $medium-color);
+
+// Breakpoints
+$mobile: 500px;
+$tablet: 768px;
+$desktop: 1024px;
+$large: 1200px;
+
+// Media Queries
+$media-mobile: "(max-width: #{$mobile})";
+$media-tablet: "(max-width: #{$tablet})";
+$media-desktop: "(max-width: #{$desktop})";
+$media-large: "(max-width: #{$large})";
+
+// Özel Değişkenler
+$header-height: 5.5rem;
+$footer-height: 4rem;
+$nav-height: 80px;
+$bg-image: url("../img/bg.jpg");
+
+// Container Genişlikleri
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1140px;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin card-hover {
+    transition: $transition;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: $box-shadow-lg;
+    }
+}
+
+@mixin section-padding {
+    padding: $spacing-section 0;
+}
+
+@mixin responsive-text {
+    @media #{$media-tablet} {
+        font-size: 90%;
+    }
+    @media #{$media-mobile} {
+        font-size: 80%;
+    }
+}

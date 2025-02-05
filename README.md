@@ -1,60 +1,102 @@
-🚀 Freelancer Portfolyo Projesi
+# 🍬 Akeller Lokum Web Sitesi
 
-Bu proje, temel web geliştirme becerilerimi uygulama fırsatı sundu. HTML, CSS, SCSS, jQuery, Lightbox, ve Owl Carousel gibi teknolojiler kullanarak şık ve modern bir portföy sitesi oluşturdum. Özellikle SCSS kullanımı sayesinde stil dosyalarım daha modüler ve organize hale geldi.
+Modern ve performans odaklı bir yaklaşımla geliştirilmiş kurumsal web sitesi projesi.
 
-🛠️ Kullanılan Teknolojiler
+## 🚀 Özellikler
 
-HTML5 & CSS3: Temel yapı ve stil
+- Progressive Web App (PWA) desteği
+- Responsive tasarım
+- SEO optimizasyonu
+- Performans odaklı geliştirme
+- Modern UI/UX
+- SCSS ile modüler CSS yapısı
+- Lazy loading ve görsel optimizasyonları
+- Cross-browser uyumluluğu
 
-SCSS: Modüler yapı ve daha temiz kod için
+## 🛠️ Teknolojiler
 
-jQuery & Owl Carousel: Dinamik özellikler ve kayan galeri
+- HTML5
+- SCSS/CSS3
+- JavaScript (ES6+)
+- Node.js (Geliştirme ortamı için)
+- Lightbox2 (Görsel galerisi için)
+- Owl Carousel (Slider için)
+- Font Awesome (İkonlar)
+- Google Fonts
+- Google Analytics
 
-Lightbox: Görsellerin etkili şekilde görüntülenmesi
+## 📦 Kurulum
 
-Formspree: İletişim formu ile kolay mail gönderme
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/kullaniciadi/akellerlokum.git
+cd akellerlokum
+```
 
-🔧 Özellikler
-
-Responsive Design: Web siteniz her cihazda mükemmel şekilde görüntülenir.
-
-Dinamik Galeri: Projelerinizi etkileyici bir şekilde sergileyin.
-
-İletişim Formu: Formspree entegrasyonu sayesinde doğrudan e-posta alabilirsiniz.
-
-🌐 Canlı Yayın
-
-Proje Netlify üzerinden yayına alındı: https://engincanaraz-freelancer.netlify.app/
-
-🚀 Kurulum ve Çalıştırma
-
-Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edebilirsiniz:
-
-Depoyu Klonlayın:
-
-git clone https://github.com/engincanaraz/freelancer-portfolio.git
-
-Klasöre Geçiş Yapın:
-
-cd freelancer-portfolio
-
-Gerekli Bağımlılıkları Kurun:
-Projede kullanılan araçları yüklemek için aşağıdaki komutu çalıştırın:
-
+2. Bağımlılıkları yükleyin:
+```bash
 npm install
+```
 
-Projeyi Çalıştırın:
-Geliştirme sunucusunu başlatmak için:
+3. SCSS derleyicisini başlatın:
+```bash
+npm run scss
+```
 
-npm start
+## 📂 Proje Yapısı
 
-Tarayıcıda Açın:
-Proje varsayılan olarak http://localhost:3000 adresinde çalışacaktır. Tarayıcınızda bu adresi ziyaret edin.
+```
+akellerlokum/
+├── public/                 # Statik dosyalar
+│   ├── css/               # Derlenmiş CSS dosyaları
+│   ├── js/                # JavaScript dosyaları
+│   ├── img/               # Görseller
+│   └── *.html             # HTML sayfaları
+├── scss/                  # SCSS kaynak dosyaları
+│   ├── _variables.scss    # Değişkenler
+│   ├── _animations.scss   # Animasyonlar
+│   ├── _header.scss      # Header stilleri
+│   ├── _footer.scss      # Footer stilleri
+│   └── main.scss         # Ana SCSS dosyası
+└── package.json          # Proje bağımlılıkları ve scriptler
+```
 
-💡 Not
+## 🔧 Geliştirme
 
-Bu proje, freelancer birinin kendine oluşturabileceği bir portföy örneği olup, eğitim ve pratik amaçlı olarak geliştirilmiştir.
+- SCSS dosyalarında değişiklik yapmak için `npm run scss` komutunu çalıştırın
+- Tüm SCSS dosyaları otomatik olarak derlenip `public/css` klasörüne kaydedilecektir
+- Geliştirme yaparken tarayıcınızda `public/index.html` dosyasını açın
 
-💬 Geri Bildirim
+## 🌐 SEO ve Performans
 
-Görüşlerinizi ve geri bildirimlerinizi bekliyorum!
+- Semantic HTML yapısı
+- Meta etiketleri optimizasyonu
+- Görsel lazy loading
+- Font preloading
+- Sıkıştırılmış CSS çıktısı
+- Optimize edilmiş görseller
+
+## 📱 PWA Özellikleri
+
+- Offline çalışabilme
+- Ana ekrana eklenebilme
+- Hızlı yüklenme
+- Push notification desteği
+
+## 🔐 Güvenlik
+
+- HTTPS zorunluluğu
+- Content Security Policy
+- XSS koruması
+- Güncel bağımlılıklar
+
+## 📄 Lisans
+
+Bu proje ISC lisansı altında lisanslanmıştır.
+
+## 📞 İletişim
+
+Sorularınız ve önerileriniz için [info@akellerlokum.com](mailto:info@akellerlokum.com) adresine e-posta gönderebilirsiniz.
+
+---
+⭐️ Developed with ❤️ by [Akeller Lokum](https://akellerlokum.com) 
